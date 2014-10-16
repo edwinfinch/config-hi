@@ -48,12 +48,20 @@
         <label for="key2-1">Classic</label>
 </fieldset>
 
+<fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
+    <legend>Language</legend>
+        <input name="key3" id="key3-0" data-type="int" value="0" checked="checked" type="radio">
+        <label for="key3-0">English</label>
+        <input name="key3" id="key3-1" data-type="int" value="1" type="radio">
+        <label for="key3-1">German</label>
+</fieldset>
+
     </div>
 
     <div data-role="collapsible">
         <h3>Information and Support</h3>
 <p>Newest watchface version: 0.4.0 internal beta<br><br>
-Website version: 0.1 internal beta<br><br>
+Website version: 0.2 internal beta<br><br>
 <b>Credits:</b><br> Edwin Finch - Lead developer<br><br>
 <i>www.edwinfinch.com/pebble/ see all my projects</i><br><br>
 
@@ -88,6 +96,7 @@ Design & idea by Philipp Weder / iPhibse (www.iPhibse.ch) <br><br>
           'btdisalert':     Number( $("input[name=key0]:checked").val() ),
       	  'btrealert':     Number( $("input[name=key1]:checked").val() ),
       	  'theme':     Number( $("input[name=key2]:checked").val() ),
+      	  'language':     Number( $("input[name=key3]:checked").val() ),
         }
         return options;
       }
@@ -104,6 +113,8 @@ Design & idea by Philipp Weder / iPhibse (www.iPhibse.ch) <br><br>
           $("input[name=key1]").checkboxradio('refresh');
           $("input[name=key2][id=key2-"+ls_pto["theme"]+"]").prop('checked',true);
           $("input[name=key2]").checkboxradio('refresh');
+          $("input[name=key3][id=key3-"+ls_pto["language"]+"]").prop('checked',true);
+          $("input[name=key3]").checkboxradio('refresh');
         }
        }
         $("#b-cancel").click(function() {
