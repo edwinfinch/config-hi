@@ -83,11 +83,65 @@
 </fieldset>
 
     </div>
+    
+                <div data-role="collapsible">
+            <h3>Note Card 1</h3>
+
+<fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
+    <legend>Enabled</legend>
+        <input name="key6" id="key6-0" data-type="int" value="0" checked="checked" type="radio">
+        <label for="key6-0">False</label>
+        <input name="key6" id="key6-1" data-type="int" value="1" type="radio">
+        <label for="key6-1">True</label>
+</fieldset>
+
+<fieldset data-role="controlgroup" data-mini="true">
+ <legend><h4>Title</h4></legend>
+    <div class="ui-field-contain">
+      <input name="key7" id="note1_title" placeholder="Title here..." value="Groceries" data-mini="true" type="text" maxlength="14">
+    </div>
+</fieldset>
+
+<fieldset data-role="controlgroup" data-mini="true">
+ <legend><h4>Content</h4></legend>
+    <div class="ui-field-contain">
+      <input name="key8" id="note1_content" placeholder="Content here..." value="Eggs, milk, dog food, and pebbles." data-mini="true" type="text" maxlength="50">
+    </div>
+</fieldset>
+
+    </div>
+    
+                    <div data-role="collapsible">
+            <h3>Note Card 2</h3>
+
+<fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
+    <legend>Enabled</legend>
+        <input name="key9" id="key9-0" data-type="int" value="0" checked="checked" type="radio">
+        <label for="key9-0">False</label>
+        <input name="key9" id="key9-1" data-type="int" value="1" type="radio">
+        <label for="key9-1">True</label>
+</fieldset>
+
+<fieldset data-role="controlgroup" data-mini="true">
+ <legend><h4>Title</h4></legend>
+    <div class="ui-field-contain">
+      <input name="key10" id="note1_title" placeholder="Title here..." value="Todo" data-mini="true" type="text" maxlength="14">
+    </div>
+</fieldset>
+
+<fieldset data-role="controlgroup" data-mini="true">
+ <legend><h4>Content</h4></legend>
+    <div class="ui-field-contain">
+      <input name="key11" id="note1_content" placeholder="Content here..." value="Wash dog, make awesome happen, and eat." data-mini="true" type="text" maxlength="50">
+    </div>
+</fieldset>
+
+    </div>
 
     <div data-role="collapsible">
         <h3>Information and Support</h3>
-<p>Newest watchface version: 0.4.0 internal beta<br><br>
-Website version: 0.2 internal beta<br><br>
+<p>Newest watchface version: 0.5.0 internal beta<br><br>
+Website version: 0.3 internal beta<br><br>
 <b>Credits:</b><br> Edwin Finch - Lead developer<br><br>
 <i>www.edwinfinch.com/pebble/ see all my projects</i><br><br>
 
@@ -119,6 +173,7 @@ Design & idea by Philipp Weder / iPhibse (www.iPhibse.ch) <br><br>
     <script>
       function saveOptions() {
         var options = {
+          //Bools, ints, etc.
           'btdisalert':     Number( $("input[name=key0]:checked").val() ),
       	  'btrealert':     Number( $("input[name=key1]:checked").val() ),
       	  'theme':     Number( $("input[name=key2]:checked").val() ),
@@ -126,6 +181,14 @@ Design & idea by Philipp Weder / iPhibse (www.iPhibse.ch) <br><br>
       	  'language':     Number( $("input[name=key3]:checked").val() ),
       	  'btcardenabled':     Number( $("input[name=key4]:checked").val() ),
       	  'batterycardenabled':     Number( $("input[name=key5]:checked").val() ),
+      	  'note1':     Number( $("input[name=key6]:checked").val() ),
+      	  'note2':     Number( $("input[name=key9]:checked").val() ),
+      	  
+      	  //Strings
+      	  'note1_title': $("input[name=key7]").val(),
+      	  'note1_contents': $("input[name=key8]").val(),
+      	  'note2_title': $("input[name=key10]").val(),
+      	  'note2_contents': $("input[name=key11]").val(),
         }
         return options;
       }
@@ -135,7 +198,7 @@ Design & idea by Philipp Weder / iPhibse (www.iPhibse.ch) <br><br>
        	console.log("Not undefined :)");
         if (window.localStorage.hi_ops) {
           ls_pto = JSON.parse(window.localStorage.hi_ops);
-          // the Pebble webview dies on the next line...
+          //Bools, ints, etc.
           $("input[name=key0][id=key0-"+ls_pto["btdisalert"]+"]").prop('checked',true);
           $("input[name=key0]").checkboxradio('refresh');
           $("input[name=key1][id=key1-"+ls_pto["btrealert"]+"]").prop('checked',true);
@@ -148,6 +211,16 @@ Design & idea by Philipp Weder / iPhibse (www.iPhibse.ch) <br><br>
           $("input[name=key4]").checkboxradio('refresh');
           $("input[name=key5][id=key5-"+ls_pto["batterycardenabled"]+"]").prop('checked',true);
           $("input[name=key5]").checkboxradio('refresh');
+          $("input[name=key6][id=key6-"+ls_pto["note1"]+"]").prop('checked',true);
+          $("input[name=key6]").checkboxradio('refresh');
+          $("input[name=key9][id=key9-"+ls_pto["note2"]+"]").prop('checked',true);
+          $("input[name=key9]").checkboxradio('refresh');
+          
+          //Strings
+          $("input[name=key7]").val(ls_pto["note1_title"]);
+          $("input[name=key8]").val(ls_pto["note1_contents"]);
+          $("input[name=key10]").val(ls_pto["note2_title"]);
+          $("input[name=key11]").val(ls_pto["note2_contents"]);
         }
        }
         $("#b-cancel").click(function() {
