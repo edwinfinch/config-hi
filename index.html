@@ -58,6 +58,30 @@
 
 <b>Want HI translated to your language? Email me: contact@edwinfinch.com</b>
 
+<fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
+    <legend>"It's" Text</legend>
+        <input name="key12" id="key12-0" data-type="int" value="0" checked="checked" type="radio">
+        <label for="key12-0">Show</label>
+        <input name="key12" id="key12-1" data-type="int" value="1" type="radio">
+        <label for="key12-1">Hide</label>
+</fieldset>
+
+<fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
+    <legend>Bottom Slot</legend>
+        <input name="key13" id="key13-0" data-type="int" value="0" checked="checked" type="radio">
+        <label for="key13-0">Show</label>
+        <input name="key13" id="key13-1" data-type="int" value="1" type="radio">
+        <label for="key13-1">Hide</label>
+</fieldset>
+
+<fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
+    <legend>Battery Bar</legend>
+        <input name="key14" id="key14-0" data-type="int" value="0" checked="checked" type="radio">
+        <label for="key14-0">Show</label>
+        <input name="key14" id="key14-1" data-type="int" value="1" type="radio">
+        <label for="key14-1">Hide</label>
+</fieldset>
+
     </div>
     
             <div data-role="collapsible">
@@ -143,7 +167,7 @@
     <div data-role="collapsible">
         <h3>Information and Support</h3>
 <p>Newest watchface version: 0.5.0 internal beta<br><br>
-Website version: 0.3 internal beta<br><br>
+Website version: 0.3.1 internal beta<br><br>
 <b>Credits:</b><br> Edwin Finch - Lead developer<br><br>
 <i>www.edwinfinch.com/pebble/ see all my projects</i><br><br>
 
@@ -185,6 +209,9 @@ Design & idea by Philipp Weder / iPhibse (www.iPhibse.ch) <br><br>
       	  'batterycardenabled':     Number( $("input[name=key5]:checked").val() ),
       	  'note1':     Number( $("input[name=key6]:checked").val() ),
       	  'note2':     Number( $("input[name=key9]:checked").val() ),
+          'its_text':     Number( $("input[name=key12]:checked").val() ),
+          'bottom_slot':     Number( $("input[name=key13]:checked").val() ),
+          'battery_bar':     Number( $("input[name=key14]:checked").val() ),
       	  
       	  //Strings
       	  'note1_title': $("input[name=key7]").val(),
@@ -217,6 +244,12 @@ Design & idea by Philipp Weder / iPhibse (www.iPhibse.ch) <br><br>
           $("input[name=key6]").checkboxradio('refresh');
           $("input[name=key9][id=key9-"+ls_pto["note2"]+"]").prop('checked',true);
           $("input[name=key9]").checkboxradio('refresh');
+          $("input[name=key12][id=key12-"+ls_pto["its_text"]+"]").prop('checked',true);
+          $("input[name=key12]").checkboxradio('refresh');
+          $("input[name=key13][id=key13-"+ls_pto["bottom_slot"]+"]").prop('checked',true);
+          $("input[name=key13]").checkboxradio('refresh');
+          $("input[name=key14][id=key14-"+ls_pto["battery_bar"]+"]").prop('checked',true);
+          $("input[name=key14]").checkboxradio('refresh');
           
           //Strings
           $("input[name=key7]").val(ls_pto["note1_title"]);
