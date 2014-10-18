@@ -163,11 +163,65 @@
 </fieldset>
 
     </div>
+    
+                        <div data-role="collapsible">
+            <h3>Weather Card/Options</h3>
+
+<fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
+    <legend>Enabled</legend>
+        <input name="key15" id="key15-0" data-type="int" value="0" checked="checked" type="radio">
+        <label for="key15-0">False</label>
+        <input name="key15" id="key15-1" data-type="int" value="1" type="radio">
+        <label for="key15-1">True</label>
+</fieldset>
+
+<fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
+    <legend>Temperature Preference</legend>
+        <input name="key16" id="key16-0" value="0" checked="checked" type="radio">
+        <label for="key16-0">Celsius</label>
+	<input name="key16" id="key16-1" value="1" type="radio">
+        <label for="key16-1">Fahrenheit</label>
+</fieldset>
+
+<fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
+    <legend>Weather Update Frequency</legend>
+    <input name="key17" id="key17-0" value="0" checked="checked" type="radio">
+        <label for="key17-0">15 minutes</label>
+    <input name="key17" id="key17-1" value="1" type="radio">
+        <label for="key17-1">30 minutes</label>
+    <input name="key17" id="key17-2" value="2" type="radio">
+        <label for="key17-2">45 minutes</label>
+    <input name="key17" id="key17-3" value="3" type="radio">
+        <label for="key17-3">60 minutes</label>
+</fieldset>
+
+<fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
+    <legend>Location Type</legend>
+        <input name="key18" id="key18-0" value="0" checked="checked" type="radio">
+        <label for="key18-0">GPS coordinates</label>
+        <input name="key18" id="key18-1" value="1" type="radio">
+        <label for="key18-1">Specified longitude and latitude</label>
+</fieldset>
+
+<fieldset data-role="controlgroup" data-mini="true">
+ <legend><h4>Specific coordinates:</h4></legend>
+ <i>This is only if you have the above option on "Specified longitude and latitude".</i>
+    <div class="ui-field-contain">
+      <label for="key19" id="label_key19">Longitude</label>
+      <input name="key19" id="trans_key19" placeholder="Enter longitude" value="0.00" data-mini="true" type="text" maxlength="8">
+    </div>
+    <div class="ui-field-contain">
+      <label for="key20" id="label_key20">Latitude</label>
+      <input name="key20" id="trans_key20" placeholder="Enter latitude" value="0.00" data-mini="true" type="text" maxlength="8">
+    </div>
+</fieldset>
+
+    </div>
 
     <div data-role="collapsible">
         <h3>Information and Support</h3>
-<p>Newest watchface version: 0.5.0 internal beta<br><br>
-Website version: 0.3.1 internal beta<br><br>
+<p>Newest watchface version: 0.6.0 internal beta<br><br>
+Website version: 0.4 internal beta<br><br>
 <b>Credits:</b><br> Edwin Finch - Lead developer<br><br>
 <i>www.edwinfinch.com/pebble/ see all my projects</i><br><br>
 
@@ -212,12 +266,20 @@ Design & idea by Philipp Weder / iPhibse (www.iPhibse.ch) <br><br>
           'its_text':     Number( $("input[name=key12]:checked").val() ),
           'bottom_slot':     Number( $("input[name=key13]:checked").val() ),
           'battery_bar':     Number( $("input[name=key14]:checked").val() ),
+          'weather_card':     Number( $("input[name=key15]:checked").val() ),
+          'temp_pref':     Number( $("input[name=key16]:checked").val() ),
+          'update_freq':     Number( $("input[name=key17]:checked").val() ),
+          'spec_coords':     Number( $("input[name=key18]:checked").val() ),
       	  
       	  //Strings
       	  'note1_title': $("input[name=key7]").val(),
       	  'note1_contents': $("input[name=key8]").val(),
       	  'note2_title': $("input[name=key10]").val(),
       	  'note2_contents': $("input[name=key11]").val(),
+      	  
+      	  //Custom coords
+      	  'cust_long': $("input[name=key19]").val(),
+      	  'cust_lat': $("input[name=key20]").val(),
         }
         return options;
       }
@@ -250,6 +312,12 @@ Design & idea by Philipp Weder / iPhibse (www.iPhibse.ch) <br><br>
           $("input[name=key13]").checkboxradio('refresh');
           $("input[name=key14][id=key14-"+ls_pto["battery_bar"]+"]").prop('checked',true);
           $("input[name=key14]").checkboxradio('refresh');
+          $("input[name=key15][id=key15-"+ls_pto["weather_card"]+"]").prop('checked',true);
+          $("input[name=key15]").checkboxradio('refresh');
+          $("input[name=key16][id=key16-"+ls_pto["temp_pref"]+"]").prop('checked',true);
+          $("input[name=key16]").checkboxradio('refresh');
+          $("input[name=key17][id=key17-"+ls_pto["update_freq"]+"]").prop('checked',true);
+          $("input[name=key17]").checkboxradio('refresh');
           
           //Strings
           $("input[name=key7]").val(ls_pto["note1_title"]);
