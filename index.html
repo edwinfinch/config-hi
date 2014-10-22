@@ -368,6 +368,7 @@ Design & idea by Philipp Weder / iPhibse (www.iPhibse.ch) <br><br>
       	  'cust_long': $("input[name=key19]").val(),
       	  'cust_lat': $("input[name=key20]").val()
         }
+        console.log("Options: " + options);
         return options;
       }
 
@@ -376,6 +377,7 @@ Design & idea by Philipp Weder / iPhibse (www.iPhibse.ch) <br><br>
        	console.log("Not undefined :)");
         if (window.localStorage.hi_ops) {
           ls_pto = JSON.parse(window.localStorage.hi_ops);
+          console.log("Changing check boxes");
           //Bools, ints, etc.
           $("input[name=key0][id=key0-"+ls_pto["btdisalert"]+"]").prop('checked',true);
           $("input[name=key0]").checkboxradio('refresh');
@@ -425,11 +427,14 @@ Design & idea by Philipp Weder / iPhibse (www.iPhibse.ch) <br><br>
           $("input[name=key8]").val(ls_pto["note1_contents"]);
           $("input[name=key10]").val(ls_pto["note2_title"]);
           $("input[name=key11]").val(ls_pto["note2_contents"]);
+
+          console.log("Fuck this ship.");
         }
        }
         $("#b-cancel").click(function() {
           console.log("Cancel");
           document.location = "pebblejs://close";
+          console.log(document.location);
         });
 
         $("#b-submit").click(function() {
@@ -443,6 +448,7 @@ Design & idea by Philipp Weder / iPhibse (www.iPhibse.ch) <br><br>
           console.log("Warping to: " + location);
           console.log(location);
           document.location = location;
+          console.log(document.location);
         });
 
       });
