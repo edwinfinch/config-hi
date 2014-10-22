@@ -217,7 +217,7 @@
 </fieldset>
 
     </div>
-<!--
+
                     <div data-role="collapsible">
             <h3>Card Order</h3>
 
@@ -295,7 +295,7 @@ to mess it up :P</b>
 </fieldset>
 
     </div>
-  -->
+  
 
     <div data-role="collapsible">
         <h3>Information and Support</h3>
@@ -381,6 +381,7 @@ Design & idea by Philipp Weder / iPhibse (www.iPhibse.ch) <br><br>
           //Bools, ints, etc.
           $("input[name=key0][id=key0-"+ls_pto["btdisalert"]+"]").prop('checked',true);
           $("input[name=key0]").checkboxradio('refresh');
+          console.log("Got through 1");
           $("input[name=key1][id=key1-"+ls_pto["btrealert"]+"]").prop('checked',true);
           $("input[name=key1]").checkboxradio('refresh');
           $("input[name=key2][id=key2-"+ls_pto["theme"]+"]").prop('checked',true);
@@ -393,6 +394,7 @@ Design & idea by Philipp Weder / iPhibse (www.iPhibse.ch) <br><br>
           $("input[name=key5]").checkboxradio('refresh');
           $("input[name=key6][id=key6-"+ls_pto["note1"]+"]").prop('checked',true);
           $("input[name=key6]").checkboxradio('refresh');
+          console.log("Got through 2");
           $("input[name=key9][id=key9-"+ls_pto["note2"]+"]").prop('checked',true);
           $("input[name=key9]").checkboxradio('refresh');
           $("input[name=key12][id=key12-"+ls_pto["its_text"]+"]").prop('checked',true);
@@ -401,8 +403,9 @@ Design & idea by Philipp Weder / iPhibse (www.iPhibse.ch) <br><br>
           $("input[name=key13]").checkboxradio('refresh');
           $("input[name=key14][id=key14-"+ls_pto["battery_bar"]+"]").prop('checked',true);
           $("input[name=key14]").checkboxradio('refresh');
-
+console.log("Got through 3");
           //card order stuff
+          /*
           $("input[name=key20][id=key20-"+ls_pto["weather_card_placement"]+"]").prop('checked',true);
           $("input[name=key20]").checkboxradio('refresh');
           $("input[name=key21][id=key21-"+ls_pto["bt_card_placement"]+"]").prop('checked',true);
@@ -413,7 +416,8 @@ Design & idea by Philipp Weder / iPhibse (www.iPhibse.ch) <br><br>
           $("input[name=key23]").checkboxradio('refresh');
           $("input[name=key24][id=key24-"+ls_pto["note_2_card_placement"]+"]").prop('checked',true);
           $("input[name=key24]").checkboxradio('refresh');
-
+          */
+console.log("Got through 4");
           //weather stuff
           $("input[name=key15][id=key15-"+ls_pto["weather_card"]+"]").prop('checked',true);
           $("input[name=key15]").checkboxradio('refresh');
@@ -421,7 +425,7 @@ Design & idea by Philipp Weder / iPhibse (www.iPhibse.ch) <br><br>
           $("input[name=key16]").checkboxradio('refresh');
           $("input[name=key17][id=key17-"+ls_pto["update_freq"]+"]").prop('checked',true);
           $("input[name=key17]").checkboxradio('refresh');
-          
+          console.log("Got through 5");
           //Strings
           $("input[name=key7]").val(ls_pto["note1_title"]);
           $("input[name=key8]").val(ls_pto["note1_contents"]);
