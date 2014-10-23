@@ -36,6 +36,26 @@
         <label for="key1-1">True</label>
 </fieldset>
     </div>
+
+    <div data-role="collapsible">
+        <h3>"Good day" Options</h3>
+
+<fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
+    <legend>Enabled</legend>
+    <input name="key70" id="key70-1" data-type="int" value="1" checked="checked" type="radio">
+        <label for="key70-1">True</label>
+        <input name="key70" id="key70-0" data-type="int" value="0" type="radio">
+        <label for="key70-0">False</label>
+</fieldset>
+
+<fieldset data-role="controlgroup" data-mini="true">
+ <legend><h4>Name</h4></legend>
+ <i>This will put your name in the intro text. ie. "Good morning Edwin, [...]"</i>
+    <div class="ui-field-contain">
+      <input name="key71" id="goodday_name" placeholder="Your name here..." value="there" data-mini="true" type="text" maxlength="20">
+    </div>
+</fieldset>
+    </div>
     
         <div data-role="collapsible">
         <h3>Look and Feel</h3>
@@ -81,7 +101,6 @@
         <input name="key14" id="key14-1" data-type="int" value="1" type="radio">
         <label for="key14-1">Hide</label>
 </fieldset>
-
     </div>
     
             <div data-role="collapsible">
@@ -287,8 +306,8 @@ to mess it up :P</b>
 
     <div data-role="collapsible">
         <h3>Information and Support</h3>
-<p>Newest watchface version: 0.6.0 internal beta<br><br>
-Website version: 0.4 internal beta<br><br>
+<p>Newest watchface version: 0.8.0 internal beta<br><br>
+Website version: 0.8 internal beta<br><br>
 <b>Credits:</b><br> Edwin Finch - Lead developer<br><br>
 <i>www.edwinfinch.com/pebble/ see all my projects</i><br><br>
 
@@ -333,6 +352,7 @@ Design & idea by Philipp Weder / iPhibse (www.iPhibse.ch) <br><br>
           'its_text':     Number( $("input[name=key12]:checked").val() ),
           'bottom_slot':     Number( $("input[name=key13]:checked").val() ),
           'battery_bar':     Number( $("input[name=key14]:checked").val() ),
+          'intro_enabled':     Number( $("input[name=key70]:checked").val() ),
           
           'weather_card_placement':     Number( $("input[name=key61]:checked").val() ),
           'bt_card_placement':     Number( $("input[name=key62]:checked").val() ),
@@ -350,6 +370,7 @@ Design & idea by Philipp Weder / iPhibse (www.iPhibse.ch) <br><br>
       	  'note1_contents': $("input[name=key8]").val(),
       	  'note2_title': $("input[name=key10]").val(),
       	  'note2_contents': $("input[name=key11]").val(),
+          'intro_name': $("input[name=key71]").val(),
       	  
       	  //Custom coords
       	  'cust_long': $("input[name=key19]").val(),
@@ -388,6 +409,8 @@ Design & idea by Philipp Weder / iPhibse (www.iPhibse.ch) <br><br>
           $("input[name=key13]").checkboxradio('refresh');
           $("input[name=key14][id=key14-"+ls_pto["battery_bar"]+"]").prop('checked',true);
           $("input[name=key14]").checkboxradio('refresh');
+          $("input[name=key70][id=key70-"+ls_pto["intro_enabled"]+"]").prop('checked',true);
+          $("input[name=key70]").checkboxradio('refresh');
           //weather stuff
           $("input[name=key15][id=key15-"+ls_pto["weather_card"]+"]").prop('checked',true);
           $("input[name=key15]").checkboxradio('refresh');
@@ -398,6 +421,7 @@ Design & idea by Philipp Weder / iPhibse (www.iPhibse.ch) <br><br>
           $("input[name=key8]").val(ls_pto["note1_contents"]);
           $("input[name=key10]").val(ls_pto["note2_title"]);
           $("input[name=key11]").val(ls_pto["note2_contents"]);
+          $("input[name=key71]").val(ls_pto["intro_name"]);
 
           $("input[name=key61][id=key61-"+ls_pto["weather_card_placement"]+"]").prop('checked',true);
           $("input[name=key61]").checkboxradio('refresh');
