@@ -184,18 +184,6 @@
 </fieldset>
 
 <fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
-    <legend>Weather Update Frequency</legend>
-    <input name="key17" id="key17-0" value="0" checked="checked" type="radio">
-        <label for="key17-0">15 minutes</label>
-    <input name="key17" id="key17-1" value="1" type="radio">
-        <label for="key17-1">30 minutes</label>
-    <input name="key17" id="key17-2" value="2" type="radio">
-        <label for="key17-2">45 minutes</label>
-    <input name="key17" id="key17-3" value="3" type="radio">
-        <label for="key17-3">60 minutes</label>
-</fieldset>
-
-<fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
     <legend>Location Type</legend>
         <input name="key18" id="key18-0" value="0" checked="checked" type="radio">
         <label for="key18-0">GPS coordinates</label>
@@ -355,7 +343,6 @@ Design & idea by Philipp Weder / iPhibse (www.iPhibse.ch) <br><br>
           //weather stuff
           'weather_card':     Number( $("input[name=key15]:checked").val() ),
           'temp_pref':     Number( $("input[name=key16]:checked").val() ),
-          'update_freq':     Number( $("input[name=key17]:checked").val() ),
           'spec_coords':     Number( $("input[name=key18]:checked").val() ),
       	  
       	  //Strings
@@ -381,7 +368,6 @@ Design & idea by Philipp Weder / iPhibse (www.iPhibse.ch) <br><br>
           //Bools, ints, etc.
           $("input[name=key0][id=key0-"+ls_pto["btdisalert"]+"]").prop('checked',true);
           $("input[name=key0]").checkboxradio('refresh');
-          console.log("Got through 1");
           $("input[name=key1][id=key1-"+ls_pto["btrealert"]+"]").prop('checked',true);
           $("input[name=key1]").checkboxradio('refresh');
           $("input[name=key2][id=key2-"+ls_pto["theme"]+"]").prop('checked',true);
@@ -394,7 +380,6 @@ Design & idea by Philipp Weder / iPhibse (www.iPhibse.ch) <br><br>
           $("input[name=key5]").checkboxradio('refresh');
           $("input[name=key6][id=key6-"+ls_pto["note1"]+"]").prop('checked',true);
           $("input[name=key6]").checkboxradio('refresh');
-          console.log("Got through 2");
           $("input[name=key9][id=key9-"+ls_pto["note2"]+"]").prop('checked',true);
           $("input[name=key9]").checkboxradio('refresh');
           $("input[name=key12][id=key12-"+ls_pto["its_text"]+"]").prop('checked',true);
@@ -403,15 +388,11 @@ Design & idea by Philipp Weder / iPhibse (www.iPhibse.ch) <br><br>
           $("input[name=key13]").checkboxradio('refresh');
           $("input[name=key14][id=key14-"+ls_pto["battery_bar"]+"]").prop('checked',true);
           $("input[name=key14]").checkboxradio('refresh');
-console.log("Got through 3");
           //weather stuff
           $("input[name=key15][id=key15-"+ls_pto["weather_card"]+"]").prop('checked',true);
           $("input[name=key15]").checkboxradio('refresh');
           $("input[name=key16][id=key16-"+ls_pto["temp_pref"]+"]").prop('checked',true);
           $("input[name=key16]").checkboxradio('refresh');
-          $("input[name=key17][id=key17-"+ls_pto["update_freq"]+"]").prop('checked',true);
-          $("input[name=key17]").checkboxradio('refresh');
-          console.log("Got through 4");
           //Strings
           $("input[name=key7]").val(ls_pto["note1_title"]);
           $("input[name=key8]").val(ls_pto["note1_contents"]);
