@@ -40,6 +40,27 @@
         <div data-role="collapsible">
         <h3>Look and Feel</h3>
 
+<div data-role="collapsible">
+        <h3>Fonts</h3>
+
+<fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
+    <legend>Date</legend>
+        <input name="key71" id="key71-0" data-type="int" value="0" checked="checked" type="radio">
+        <label for="key71-0">Gothic 14</label>
+        <input name="key71" id="key71-1" data-type="int" value="1" type="radio">
+        <label for="key71-1">Gothic 18</label>
+</fieldset>
+
+<fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
+    <legend>Card Content</legend>
+    <i>Making the content font smaller will enable more text on the screen. Bigger font, less text.</i>
+        <input name="key72" id="key72-0" data-type="int" value="0" checked="checked" type="radio">
+        <label for="key72-0">Gothic 18</label>
+        <input name="key72" id="key72-1" data-type="int" value="1" type="radio">
+        <label for="key72-1">Gothic 14</label>
+</fieldset>
+    </div>
+
 <fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
     <legend>Theme</legend>
         <input name="key2" id="key2-0" data-type="int" value="0" checked="checked" type="radio">
@@ -82,6 +103,8 @@
         <label for="key14-1">Hide</label>
 </fieldset>
     </div>
+    
+    <div data-role="content">
     
             <div data-role="collapsible">
             <h3>Bluetooth Card</h3>
@@ -339,6 +362,8 @@ Design & idea by Philipp Weder / iPhibse (www.iPhibse.ch) <br><br>
           'battery_card_placement':     Number( $("input[name=key63]:checked").val() ),
           'note_1_card_placement':     Number( $("input[name=key64]:checked").val() ),
           'note_2_card_placement':     Number( $("input[name=key65]:checked").val() ),
+          'font_date':     Number( $("input[name=key71]:checked").val() ),
+          'font_card':     Number( $("input[name=key72]:checked").val() ),
 
           //weather stuff
           'weather_card':     Number( $("input[name=key15]:checked").val() ),
@@ -391,6 +416,10 @@ Design & idea by Philipp Weder / iPhibse (www.iPhibse.ch) <br><br>
           $("input[name=key14]").checkboxradio('refresh');
           $("input[name=key70][id=key70-"+ls_pto["intro_enabled"]+"]").prop('checked',true);
           $("input[name=key70]").checkboxradio('refresh');
+          $("input[name=key71][id=key71-"+ls_pto["font_date"]+"]").prop('checked',true);
+          $("input[name=key71]").checkboxradio('refresh');
+          $("input[name=key72][id=key72-"+ls_pto["font_card"]+"]").prop('checked',true);
+          $("input[name=key72]").checkboxradio('refresh');
           //weather stuff
           $("input[name=key15][id=key15-"+ls_pto["weather_card"]+"]").prop('checked',true);
           $("input[name=key15]").checkboxradio('refresh');
