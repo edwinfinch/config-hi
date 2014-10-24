@@ -45,10 +45,10 @@
 
 <fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
     <legend>Date</legend>
-        <input name="key71" id="key71-0" data-type="int" value="0" checked="checked" type="radio">
-        <label for="key71-0">Gothic 14</label>
-        <input name="key71" id="key71-1" data-type="int" value="1" type="radio">
-        <label for="key71-1">Gothic 18</label>
+        <input name="key73" id="key73-0" data-type="int" value="0" checked="checked" type="radio">
+        <label for="key73-0">Gothic 14</label>
+        <input name="key73" id="key73-1" data-type="int" value="1" type="radio">
+        <label for="key73-1">Gothic 18</label>
 </fieldset>
 
 <fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
@@ -362,7 +362,7 @@ Design & idea by Philipp Weder / iPhibse (www.iPhibse.ch) <br><br>
           'battery_card_placement':     Number( $("input[name=key63]:checked").val() ),
           'note_1_card_placement':     Number( $("input[name=key64]:checked").val() ),
           'note_2_card_placement':     Number( $("input[name=key65]:checked").val() ),
-          'font_date':     Number( $("input[name=key71]:checked").val() ),
+          'font_date':     Number( $("input[name=key73]:checked").val() ),
           'font_card':     Number( $("input[name=key72]:checked").val() ),
 
           //weather stuff
@@ -416,8 +416,8 @@ Design & idea by Philipp Weder / iPhibse (www.iPhibse.ch) <br><br>
           $("input[name=key14]").checkboxradio('refresh');
           $("input[name=key70][id=key70-"+ls_pto["intro_enabled"]+"]").prop('checked',true);
           $("input[name=key70]").checkboxradio('refresh');
-          $("input[name=key71][id=key71-"+ls_pto["font_date"]+"]").prop('checked',true);
-          $("input[name=key71]").checkboxradio('refresh');
+          $("input[name=key73][id=key73-"+ls_pto["font_date"]+"]").prop('checked',true);
+          $("input[name=key73]").checkboxradio('refresh');
           $("input[name=key72][id=key72-"+ls_pto["font_card"]+"]").prop('checked',true);
           $("input[name=key72]").checkboxradio('refresh');
           //weather stuff
