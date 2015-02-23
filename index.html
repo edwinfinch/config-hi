@@ -77,10 +77,12 @@
         <input name="key3" id="key3-1" data-type="int" value="1" type="radio">
         <label for="key3-1">German</label>
         <input name="key3" id="key3-2" data-type="int" value="2" type="radio">
-        <label for="key3-2">Spanish (v1.1 and up)</label>
+        <label for="key3-2">Spanish</label>
+        <input name="key3" id="key3-3" data-type="int" value="3" type="radio">
+        <label for="key3-3">French (1.2 and up)</label>
 </fieldset>
 
-<b>Want HI translated to your language? Email me: contact@edwinfinch.com</b>
+<b>Want CARDS translated to your language? Email me: contact@edwinfinch.com</b>
 
 <fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
     <legend>"It's" Text</legend>
@@ -206,26 +208,20 @@
         <label for="key16-1">Fahrenheit</label>
 </fieldset>
 
-<fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
-    <legend>Location Type</legend>
-        <input name="key18" id="key18-0" value="0" checked="checked" type="radio">
-        <label for="key18-0">GPS coordinates</label>
-        <input name="key18" id="key18-1" value="1" type="radio">
-        <label for="key18-1">Specified longitude and latitude</label>
-</fieldset>
+<b>Custom Weather Location <i>(1.2 and up)</i></b>
 
-<fieldset data-role="controlgroup" data-mini="true">
- <legend><h4>Specific coordinates:</h4></legend>
- <i>This is only if you have the above option on "Specified longitude and latitude".</i>
-    <div class="ui-field-contain">
-      <label for="key19" id="label_key19">Longitude</label>
-      <input name="key19" id="trans_key19" placeholder="Enter longitude" value="0.00" data-mini="true" type="text" maxlength="8">
+<i>If you want a custom location set, please enter it in the following format:
+<b>[city (ie. Toronto)],[country/state code (ie. ca = Canada, ny = New York)]. For example, Toronto Ontario would be Toronto,ON.
+New York would be New York,NY</b><br><br></i>
+
+Entering it in incorrectly can result in errors. If you want this feature off, leave the field completely blank
+or type in "noLOC" without quotes.
+
+	<div class="ui-field-contain">
+      <label for="key19" id="label_key19"><b>Custom City/location:</b></label>
+      <input name="key19" id="trans_key19" placeholder="Toronto,ca" value="noLOC" data-mini="true" type="text" maxlength="24">
     </div>
-    <div class="ui-field-contain">
-      <label for="key20" id="label_key20">Latitude</label>
-      <input name="key20" id="trans_key20" placeholder="Enter latitude" value="0.00" data-mini="true" type="text" maxlength="8">
-    </div>
-</fieldset>
+
 
     </div>
 
@@ -310,8 +306,8 @@ doing this.</b>
 
     <div data-role="collapsible">
         <h3>Information and Support</h3>
-<p>Newest watchface version: 0.8.0 internal beta<br><br>
-Website version: 0.8 internal beta<br><br>
+<p>Newest watchface version:1.2<br><br>
+Website version: 1.2<br><br>
 <b>Credits:</b><br> Edwin Finch - Lead developer<br><br>
 <i>www.edwinfinch.com/pebble/ see all my projects</i><br><br>
 
@@ -369,8 +365,8 @@ Design & idea by Philipp Weder / iPhibse (www.iPhibse.ch) <br><br>
           //weather stuff
           'weather_card':     Number( $("input[name=key15]:checked").val() ),
           'temp_pref':     Number( $("input[name=key16]:checked").val() ),
-          'spec_coords':     Number( $("input[name=key18]:checked").val() ),
-      	  
+          'customLoc':     $("input[name=key19]:checked").val(),
+
       	  //Strings
       	  'note1_title': $("input[name=key7]").val(),
       	  'note1_contents': $("input[name=key8]").val(),
@@ -426,6 +422,7 @@ Design & idea by Philipp Weder / iPhibse (www.iPhibse.ch) <br><br>
           $("input[name=key15]").checkboxradio('refresh');
           $("input[name=key16][id=key16-"+ls_pto["temp_pref"]+"]").prop('checked',true);
           $("input[name=key16]").checkboxradio('refresh');
+          $("input[name=key19]").val(ls_pto["customLoc"]);
           //Strings
           $("input[name=key7]").val(ls_pto["note1_title"]);
           $("input[name=key8]").val(ls_pto["note1_contents"]);
