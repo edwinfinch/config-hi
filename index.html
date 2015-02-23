@@ -208,11 +208,9 @@
         <label for="key16-1">Fahrenheit</label>
 </fieldset>
 
-<b>Custom Weather Location <i>(1.2 and up)</i></b>
+<b>Custom Weather Location <i>(1.2 and up)<br></i></b>
 
-<i>If you want a custom location set, please enter it in the following format:
-<b>[city (ie. Toronto)],[country/state code (ie. ca = Canada, ny = New York)]. For example, Toronto Ontario would be Toronto,ON.
-New York would be New York,NY</b><br><br></i>
+<b>[city (ie. Toronto)],[country/state code (ie. ca = Canada, ny = New York)]</b><br><br>
 
 Entering it in incorrectly can result in errors. If you want this feature off, leave the field completely blank
 or type in "noLOC" without quotes.
@@ -365,7 +363,7 @@ Design & idea by Philipp Weder / iPhibse (www.iPhibse.ch) <br><br>
           //weather stuff
           'weather_card':     Number( $("input[name=key15]:checked").val() ),
           'temp_pref':     Number( $("input[name=key16]:checked").val() ),
-          'customLoc':     $("input[name=key19]:checked").val(),
+          'customLoc':     $("input[name=key19]").val(),
 
       	  //Strings
       	  'note1_title': $("input[name=key7]").val(),
